@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Comparisons Conditionals</title>
+    <script>
+        var mySmallNumber = 5, myString = "5", myBigNumber = 255;
+        var output1 = mySmallNumber == myString;
+        var output2 = mySmallNumber === myString;
+        var output3 = mySmallNumber < myBigNumber;
+        var output4 = mySmallNumber > myBigNumber;
+        console.log('***** Feature Set 2 *****');
+        console.log(`Is ${mySmallNumber} equal to ${myString}: ${output1}`);
+        console.log(`Is the value and datatype of ${mySmallNumber} equal to ${myString}: ${output2}`);
+        console.log(`Is ${mySmallNumber} less than ${myBigNumber}: ${output3}`);
+        console.log(`Is ${mySmallNumber} greater than ${myBigNumber}: ${output4}`);
+        var gameNumber = 31;
+        var userInput1 = 56;
+        var userInput2 = 54;
+        console.log('***** Feature Set 4 *****');
+        if (userInput1 > gameNumber) {
+            console.log(`Your number (${userInput1}) is too damn high!`)
+        }
+        if (userInput1 < gameNumber) {
+            console.log(`Your number (${userInput1}) is too damn low!`)
+        }
+        if (userInput1 < 1 || userInput1 > 100) {
+            console.log(`Your number (${userInput1}) isn\'t even in range! Get it together!`)
+        }
+        else {
+            console.log(`Your number (${userInput1}) is right in the sweet spot. Keep it up bro!`)
+        }
+        if (userInput2 === gameNumber) {
+            console.log(`Congrats on your second guess buddy! You chose the right number: ${userInput2}`)
+        }
+        else {
+            console.log(`What a shame. You guessed the wrong number (${userInput2}).`)
+        }
+        console.log('***** Feature Set 5 *****');
+        switch (userInput1) {
+            case gameNumber:
+                console.log('You found the correct number!');
+                break;
+            case gameNumber - 10:
+                console.log('Too low, but warm.');
+                break;
+            case gameNumber + 10:
+                console.log('Too high, but warm.');
+                break;
+            case gameNumber - 25:
+                console.log('Too low and cold.');
+                break;
+            case gameNumber + 25:
+                console.log('Too high and cold.');
+                break;
+            default:
+                console.log('You are way off.')
+                break;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
