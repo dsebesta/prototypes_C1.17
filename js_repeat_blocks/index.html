@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Repeat Blocks</title>
+    <script>
+        // **** Feature Set 1 ****
+
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var mixedArray = [4, 56, 11, 13, 97, 22, 7, 36, 19, 5, 8, 10];
+
+        function arrayOutputAsc(arr) {
+            var tempArr = arr; //created temp array because sort method is destructive. sort was used in case of mixed array
+            tempArr.sort(function(a, b){return a-b});
+            for (var i=0; i<tempArr.length; i++) {
+                console.log('outputting numbers from array in ascending order: '+tempArr[i])
+            }
+        }
+        arrayOutputAsc(numbers);
+
+        function arrayOutputDsc(arr) {
+            var tempArr = arr; //created temp array because sort method is destructive. sort was used in case of mixed array
+            tempArr.sort(function(a, b){return a-b}); //could've sorted this in descending order, figured you wanted to see the for loop count backwards
+            for (i = tempArr.length - 1; i >= 0; i--) {
+                console.log('outputting numbers from array in descending order: ' + tempArr[i])
+            }
+        }
+        arrayOutputDsc(numbers);
+
+        function arrayOutputOdd(arr) { //prototype didn't ask for asc or dsc in this one so I left out sort.
+            for (i=0; i<numbers.length; i++) {
+                if (numbers[i]%2 !== 0) { //yes i did this before seeing step 7
+                    console.log('outputting odd numbers from array: '+arr[i])
+                }
+            }
+        }
+        arrayOutputOdd(numbers);
+        arrayOutputOdd(mixedArray);
+
+        // **** Feature Set 2 ****
+
+        var classRoom = {desk1: 'Stu', desk2: 'Peggy', desk3: 'LoneStar', desk4: 'George', desk5: 'Sheldon'};
+        for(var desks in classRoom) {
+            console.log(classRoom[desks] + ' is at ' + desks)
+        }
+
+        // **** Feature Set 3 ****
+
+        var studentArray = [{name: "Bob", grade: 87}, {name: "Fred", grade: 82}, {name: "George", grade: 93}, {name: "Robert", grade: 85}];
+        function findStudent(studentName) {
+            var i = 0, found = false, output = '';
+            while(studentArray[i] && !found) {
+                if (studentArray[i].name === studentName) {
+                    found = true;
+                    output = 'Found ' + studentName + '. His\\Her grade is ' + studentArray[i].grade + '.';
+                    return output;
+                }
+                i++
+            }
+            if (!found) {
+                output = 'Student ' + studentName + ' was not found.';
+                return output;
+            }
+        }
+        console.log('Test 1: ', findStudent("George"));
+        console.log('Test 2: ', findStudent("Fred"));
+        console.log('Test 3: ', findStudent("Hank"));
+
+    </script>
+</head>
+</head>
+<body>
+
+</body>
+</html>
