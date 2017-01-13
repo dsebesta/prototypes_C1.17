@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <style>
+        .playground {
+            margin: 2%;
+            min-height: 50vh;
+        }
+        .playground_source {
+            background-color: lavender;
+        }
+        .playground_destination {
+            background-color: lightyellow;
+        }
+        .awesome_class {
+            text-shadow: 1px 1px red;
+            font-weight: bold;
+        }
+        .neato {
+            padding: 1%;
+        }
+        .neato > li {
+            margin: 0px 1%;
+            padding: 0px;
+            list-style-type: none;
+            display: inline-block;
+        }
+        .awesome_picture {
+            display: inline-block;
+        }
+        .awesome_picture > figcaption {
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 120%;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            //playground 1 code
+            $("body>div:nth-child(1)>*").clone().appendTo("#playground1");
+            //playground 2 code
+            $("body>div:nth-child(3)>*").clone().appendTo("#playground2");
+            //playground 3 code
+            $("body>div:nth-child(5)>*").clone().appendTo("#playground3");
+        });
+    </script>
+</head>
+<body>
+    <!-- ************** Playground 1 ************** -->
+
+    <!-- ********** Playground 1 Source ********** -->
+    <div class="playground playground_source">
+        <h1>I am a heading</h1>
+        <p>This is an awesome paragraph</p>
+        <p style="color:red">This has red text</p>
+    </div>
+
+    <!-- ********** Playground 1 Destination ********** -->
+    <div class="playground playground_destination" id="playground1">
+        <!--copy code into here using jQuery ONLY-->
+        <!-- ******** NO COPY AND PASTE ******** -->
+    </div>
+
+    <!-- ************** Playground 2 ************** -->
+
+    <!-- ********** Playground 2 Source ********** -->
+    <div class="playground playground_source">
+        <div class='awesome_class'>
+            Here is some awesome div text
+        </div>
+        <div class='awesome_class' id='my_awesome_div2'>
+            Here is MORE awesome div text
+        </div>
+        <div class='awesome_class' id='my_awesome_div3' data-coolness='high'>
+            Here is <strong>EVEN MORE</strong> awesome div text
+        </div>
+    </div>
+
+    <!-- ********** Playground 2 destination ********** -->
+    <div class="playground playground_destination" id="playground2">
+        <!--copy code into here using jQuery ONLY-->
+        <!-- ******** NO COPY AND PASTE ******** -->
+    </div>
+
+    <!-- ************** Playground 3 ************** -->
+
+    <!-- ********** Playground 3 Source ********** -->
+    <div class="playground playground_source">
+        <ul class="neato">
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+        </ul>
+        <figure class="awesome_picture">
+            <img src="http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg">
+            <figcaption>That's right, <span class="bold_text">you are</span></figcaption>
+        </figure>
+    </div>
+
+    <!-- ********** Playground 3 Destination ********** -->
+    <div class="playground playground_destination" id="playground3">
+        <!--copy code into here using jQuery ONLY-->
+        <!-- ******** NO COPY AND PASTE ******** -->
+    </div>
+</body>
+</html>
