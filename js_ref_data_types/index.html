@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Ref Data Types</title>
+    <script>
+        var students = ['Derrick', 'Ken', 'Michael', 'John', 'Gwen'];
+        console.log(students[2]);
+        console.log(students);
+        console.log(students.length);
+        students.push('Darin', 'Daniel');
+        console.log(students.length);
+        console.log(students);
+
+        var student = {};
+        student.firstName = 'Derrick';
+        student.lastName = 'Sebesta';
+        student.age = '34';
+        student.school = 'LearningFuze';
+        student.questionList = [];
+        student.hasQuestion = false;
+        student.greeting = function() {
+            return `Hello, my name is ${this.firstName}`;
+        };
+        student.aboutMe = function() {
+            return `My full name is ${this.firstName} ${this.lastName}, I am ${this.age} years old and I am a student at ${this.school}.`;
+        };
+        student.askQuestion = function(question) {
+            this.hasQuestion = true;
+            this.questionList.push(question);
+            return 'A question has been added to your list';
+        };
+        student.answerQuestion = function() {
+            if (this.hasQuestion) {
+                this.hasQuestion = false;
+                return this.questionList[this.questionList.length - 1];
+            }
+            else {
+                return 'You have no pending questions';
+            }
+        };
+
+        console.log('Greeting function:', student.greeting());
+        console.log('About Me function:', student.aboutMe());
+        console.log('Answer Question function:', student.answerQuestion());
+        console.log('Ask Question function:', student.askQuestion('Where is the any key?'));
+        console.log('Ask Question function:', student.askQuestion('When is lunch?'));
+        console.log('Ask Question function:', student.askQuestion('Where is my laptop?'));
+        console.log('Answer Question function:', student.answerQuestion());
+        console.log('Question List function:', student.questionList);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
