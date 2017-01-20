@@ -13,8 +13,9 @@ $(document).ready(function (){
     // $('#list button').on('click', function() { ****** Original Code *******
 
     $('#list').on('click', 'button', function() {
-        console.log($(this).text());
-        var attr_test = $(this).attr('say_what');
+        console.log($(event.target).text());
+        var attr_test = $(event.target).attr('say_what');
+
         if (attr_test == 'choose_only_me') {
             window.open('http://www.google.com', '_blank')
         }
