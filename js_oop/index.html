@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript OOP Prototype</title>
+    <script>
+        function coin_stack(starting_amount) {
+            this.value = starting_amount;
+            this.add_coins = function(amount_to_add) {
+                this.value += amount_to_add;
+            };
+            this.remove_coins = function(amount_to_remove) {
+                if (this.value>=amount_to_remove) {
+                    this.value-=amount_to_remove;
+                    return amount_to_remove;
+                }
+                else {
+                    amount_to_remove = this.value;
+                    this.value = 0;
+                    return amount_to_remove;
+                }
+            };
+        }
+
+        var my_coin_stack = new coin_stack(50);
+        console.log('my coin stack contains ' + my_coin_stack.value + ' coins.');
+        my_coin_stack.add_coins(15);
+        console.log('I have ' + my_coin_stack.value + ' coins in my stack');
+        my_coin_stack.remove_coins(37);
+        console.log('I have ' + my_coin_stack.value + ' coins in my stack');
+        my_coin_stack.remove_coins(55);
+        console.log('I have ' + my_coin_stack.value + ' coins in my stack');
+
+        coin_stack.prototype.transfer_coins = function (from_obj, amount) {
+            var updated_amount_to_remove = from_obj.remove_coins(amount);
+            this.add_coins(updated_amount_to_remove);
+            return amount;
+        };
+
+        var derricks_coins = new coin_stack(50);
+        var dans_coins = new coin_stack(50);
+
+        console.log('***** new objects created: *****');
+        console.log('derricks coins: ' + derricks_coins.value);
+        console.log('dans coins: ' + dans_coins.value);
+
+
+        console.log('***** transferred 30 to derrick *****');
+        derricks_coins.transfer_coins(dans_coins, 30);
+        console.log('derricks coins: ' + derricks_coins.value);
+        console.log('dans coins: ' + dans_coins.value);
+
+        console.log('***** transferred 120 to dan *****');
+        dans_coins.transfer_coins(derricks_coins, 120);
+        console.log('derricks coins: ' + derricks_coins.value);
+        console.log('dans coins: ' + dans_coins.value);
+
+    </script>
+</head>
+<body>
+<h1>Javascript OOP Prototype</h1>
+
+</body>
+</html>
