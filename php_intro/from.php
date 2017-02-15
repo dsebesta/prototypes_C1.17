@@ -63,6 +63,7 @@ switch($check_var){
 
 //EXERCISE 8
 
+
 $student = ['name'=>'Skippy', 'class'=>'English', 'grade'=>75];
 
 //EXERCISE 9
