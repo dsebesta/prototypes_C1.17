@@ -1,6 +1,3 @@
-<?php
+Get: <?print_r($_GET)?> <br>
+Post: <?php var_dump($_POST);?>
 
-print_r($_GET);
-var_dump($_POST);
-
-?>
