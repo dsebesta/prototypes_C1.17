@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Form</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</head>
+<body>
+
+<form>
+    <input type="checkbox" value="howdy">I have a bike
+    <textarea rows="4" cols="20" name="varTextArea">Input some random info here</textarea>
+</form>
+<button>Click Me</button>
+
+<script>
+
+    var input_checkbox = $('input').val();
+    var input_textarea = $('textarea').val();
+
+    $('button').click(ajaxCall);
+
+
+    function ajaxCall() {
+        $.ajax({
+            url: 'index.php',
+            method: 'post',
+            data: {
+                textArea: input_textarea,
+                checkbox: input_checkbox
+            },
+            dataType: 'text',
+            success: function(result) {
+                console.log(result)
+            }
+        })
+    }
+
+
+</script>
+</body>
+</html>

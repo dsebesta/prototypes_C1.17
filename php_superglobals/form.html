@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<form action="index.php" method="post">
+    <div>
+        <input type="text" name="name" id="my_name">
+        <input type="text" name="fav_fruit[]" placeholder="favorite fruit">
+        <input type="text" name="fav_fruit[]" placeholder="favorite fruit">
+        <input type="text" name="fav_fruit[]" placeholder="favorite fruit">
+    </div>
+    <div>
+        <select name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div>
+        <button>Submit</button>
+    </div>
+</form>
+<!--Get Method-->
+<!--Array ( [name] => derrick [fav_fruit] => Array ( [0] => orange [1] => apple [2] => banana ) [gender] => male ) array(0) { }-->
+
+<!--Post-->
+
+</body>
+</html>
