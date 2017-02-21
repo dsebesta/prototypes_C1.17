@@ -13,10 +13,9 @@ function formFunction ($log, $http) {
 
     self.retrieveData = function () {
         $http({
-            method: 'post',
-            url: self.createURL(),
-            dataType: 'json',
-            crossDomain: true
+            type: 'jsonp',
+            url: 'https://itunes.apple.com/search?term=derrick&callback=JSON_CALLBACK',
+            cache: false
         }).then (
             function successCallback(response) {
                 $log.log('success: ', response)
