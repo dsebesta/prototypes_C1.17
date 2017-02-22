@@ -2,12 +2,16 @@ Place your queries below
 
 -- Feature Set 1
 ------------------------------
+-- Select all students with username like dsebesta
 SELECT * FROM `students` WHERE `username` LIKE 'dsebesta'
 
+-- Update email address for student with id = 1
 UPDATE `students` SET `email` = 'dsebesta@gmail.com' WHERE `students`.`id` = 1;
 
+-- Create new student
 INSERT INTO `students` (`id`, `name`, `email`, `age`, `ssn`, `username`, `password`, `joined`, `status`) VALUES (NULL, 'John Doe', 'jdoe@missingperson.com', '9', '999999999', 'jdoe', SHA1('donttouchmyhair'), NOW(), 'banned');
 
+-- Delete "jdoe" student
 DELETE FROM `students` WHERE `username`='jdoe'
 
 
