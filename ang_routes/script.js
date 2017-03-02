@@ -1,22 +1,34 @@
 // Create the route module and name it routeApp
+var app = angular.module('routeApp',['ngRoute']);
 
 // Config the routes
-
-         // route for the home page
-
-        // route for the about page
-
-        // route for the contact page
-
+app.config(function($routeProvider){
+    $routeProvider
+        .when('/',{
+            templateUrl: 'pages/home.html',
+            controller: 'routeCtrl',
+            controllerAs: 'rc'
+        })
+        .when('/about', {
+            templateUrl: 'pages/about.html',
+            controller: 'aboutController',
+            controllerAs: 'ac'
+        })
+        .when ('/contact', {
+            templateUrl: 'pages/contact.html',
+            controller: 'contactController',
+            controllerAs: 'cc'
+        })
+        .otherwise ({
+            redirectTo: '/'
+        })
+});
 
 // Create the controllers for the different pages below
-
-// home page controller
-    // Create a message to display in the view
-
-
-// about page controller
-    // Create a message to display in the view
-
-// contact page controller
-    // Create a message to display in the view
+app.controller('routeCtrl', function() {
+   this.message = 'lorem ipsum';
+}).controller('aboutController', function() {
+    this.message = 'about page111';
+}).controller('contactController', function() {
+    this.message = 'contact page111';
+});
