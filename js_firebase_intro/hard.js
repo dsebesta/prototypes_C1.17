@@ -1,5 +1,18 @@
 // harder Firebase Intro Prototype js file
 
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDTW_9A8yU8VThWMc-SbhvvZnY-K4t03Ho",
+    authDomain: "lfzchallenge-d5169.firebaseapp.com",
+    databaseURL: "https://lfzchallenge-d5169.firebaseio.com",
+    storageBucket: "lfzchallenge-d5169.appspot.com",
+    messagingSenderId: "7503732283"
+};
+firebase.initializeApp(config);
+
+var fbRef = firebase.database();
+
+
 function updateDom(d){
     var table = $('.sgt tbody');
     table.html('');
